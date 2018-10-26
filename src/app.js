@@ -5,8 +5,12 @@ const mongoose = require('mongoose');
 
 const app = express();
 const router = express.Router();
+
 //Connecta ao banco
 mongoose.connect('mongodb://daiene:daiene01@ds041167.mlab.com:41167/node_str');
+
+//Carregar Models
+const Produto = require('./models/produto');
 
 // Carregar as Rotas
 const indexRoute = require('./routes/index-route');
