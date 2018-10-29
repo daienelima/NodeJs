@@ -9,7 +9,11 @@ const router = express.Router();
 
 
 //Connecta ao banco
-mongoose.connect('mongodb://daiene:daiene01@ds041167.mlab.com:41167/node_str', { useNewUrlParser: true });
+mongoose.connect('mongodb://daiene:daiene01@ds041167.mlab.com:41167/node_str', {
+    useCreateIndex: true , 
+    useNewUrlParser: true 
+}).then(()=> console.log('Conectado ao mongoDB'))
+.catch(err => consele.error('Erro ao conectar'));
 
 //Carregar Models
 const Produto = require('./models/produto');
