@@ -8,11 +8,11 @@ para baixar todas as dependecias. :)
 Para executar: nodemon ./bin/server.js
 
 # Funções:
-Cadastro de Produto
-Cadastro de usuario
-Cadastro de solicitação de pedido
-Envio de e-mail automatico de boas-vindas
-Validação de login
-Encriptografia de senha
-Validação de token de login
-Refresh de token
+Cadastro de Produto,
+Cadastro de usuario,
+Cadastro de solicitação de pedido,
+Envio de e-mail automatico de boas-vindas,
+Validação de login,
+Encriptografia de senha,
+Validação de token de login,
+Refresh de token,
