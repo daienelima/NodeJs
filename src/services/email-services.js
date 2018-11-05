@@ -8,7 +8,7 @@ exports.send = async(to, subject, body) => {
     try {
         const msg = {
             to: to,
-            from: 'Daiene@testes.com',
+            from: 'Daiene@nodeApi.com',
             subject: subject,
             html: body,
         };

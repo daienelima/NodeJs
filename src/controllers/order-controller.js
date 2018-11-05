@@ -1,8 +1,8 @@
 'use strict';
 
-const ValidationContract = require('../validators/fluent-validator');
-const repository = require('../repositories/customer-repository');
+const repository = require('../repositories/order-repository');
 const guid = require('guid');
+const authService = require('../services/auth-service');
 
 exports.get = async (req, res, next) =>{
     try{
@@ -16,8 +16,13 @@ exports.get = async (req, res, next) =>{
 }
 
 exports.post = async(req, res, next) => {
- 
     try{
+        //Recuperar o token
+        const token = req.body.token || req.query.token || req.headers['x-access-token'];
+        
+        //Decodificar token
+        const data = await authService.decodeToken(token);
+
         await repository.create({
             customer: req.body.customer,
             //Gerando numero de ordem automaticamente
